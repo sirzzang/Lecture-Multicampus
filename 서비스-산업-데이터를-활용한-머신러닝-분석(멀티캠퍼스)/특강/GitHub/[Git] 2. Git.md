@@ -84,15 +84,13 @@ Initialized empty Git repository in C:/Users/student/Desktop/git_practice/.git/
 
   bash 창에  `(master)`라는 브랜치 정보가 표기된다.
 
-![master](master.png)
-
-
+![master](images/master.png)
 
   이후 해당 directory 내에 `.git`이라는 숨김 폴더가 생성되며, 모든 `git`과 관련된 동작은 해당 폴더에 기록된다.
 
-![git 생성](git 생성.png)
 
 
+![git 폴더 생성](images/git 폴더 생성-1590508853662.png)
 
 
 
