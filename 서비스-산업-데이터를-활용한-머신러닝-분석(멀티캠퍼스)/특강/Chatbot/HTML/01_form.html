@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- body 태그 안에 form 태그 만들기 -->
+    <!-- 아래에 사용자가 회원가입 시 입력해야 할 정보들을 넣도록 만들겠다. -->
+    <!-- 이 정보를 데이터가 가지고 이동할 것. -->
+
+
+
+    <!-- form 태그 자체가 중요함. -->
+    <!-- action 뒤에 나오는 동작을 할 때 -->
+    <form action="">
+        <label for = "text"> TEXT </label>
+        <!-- label 속성 필수적으로 for 속성 -->
+        <!-- text라는 아이디 찾아서 label한다. -->
+        <input type="text" id="text"><br>
+        <!-- input 태그에 id 지정 -->
+        <!-- input 태그에도 br 태그 달아야 줄바꿈 됨.-->
+        <label for="number">NUMBER</label><br>
+
+        <input type="number" id="number"><br>
+        <!-- input 태그에 디자인 안 해도 가능 -->
+        PASSWORD <input type="password"><br>
+        <!-- type을 password로 하면 알아서 비밀번호 입력할 때 가려서 입력됨. -->
+        EMAIL <input type="email"><br>
+        <!-- email은 사용자가 제출할 때 다른 점을 알 수 있음. -->
+        <input type="submit" value="사용자제출버튼"><br>
+        <!-- 제출 버튼 만들고 나면, 이메일에 @ 없이 마음대로 쓰면 막아줌. -->
+        DATE <input type="date"><br>
+
+        <!-- radio: 단일 선택 -->
+        <!-- input*3 하면 input 태그 3개 생성-->
+        <!-- alt 누른채 클릭 클릭하면 다중 선택 -->
+        <!-- ctrl alt 화살표 아래로.-->
+        <!-- value = 서버에서 받는값 -->
+        <input type="radio" name="gender" value="1">남자<br>
+        <input type="radio" name="gender" value="2">여자<br>
+        <input type="radio" name="gender" value="3">노노<br>
+
+
+        <!-- checkboc 다중 선ㅌㄱ -->
+        <input type="checkbox" name="option " value ="1">Python
+        <input type="checkbox" name="option " value ="2">HTML
+
+        <!-- select : -->
+        <select name="country">
+            <option value="1">한국</option>
+            <option value="2">미국</option>
+            <option value="3">중국</option>
+        </select>
+
+
+
+
+    </form>
+
+</body>
+</html>

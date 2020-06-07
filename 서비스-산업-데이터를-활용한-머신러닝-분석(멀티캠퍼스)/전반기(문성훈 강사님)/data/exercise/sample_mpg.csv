@@ -1,0 +1,5 @@
+manufacturer,model,displ,year,cyl,trans,drv,cty,hwy,fl,class
+audi,a4,1.8,1999,4,auto(l5),f,18,29,p,compact
+audi,a4,2,2008,4,auto(av),f,21,30,p,compact
+audi,a4,2.8,1999,6,auto(l5),f,16,26,p,compact
+audi,a4,3.1,2008,6,auto(av),f,18,27,p,compact

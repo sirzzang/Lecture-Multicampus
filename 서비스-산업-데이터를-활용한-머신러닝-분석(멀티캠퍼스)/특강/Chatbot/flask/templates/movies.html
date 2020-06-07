@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--  ol 태그 안에 넣어서 이상하게 나오지 않게  -->
+    <!-- ol 안에 있는 형식이 jinja2 태그 템플릿 형식-->
+    <h2> 영화 목록 </h2>
+    <ol>
+        {% for movie in movie_list %}
+            <li>{{ movie }}</li>    
+        {% endfor %}
+    </ol>
+</body>
+</html>

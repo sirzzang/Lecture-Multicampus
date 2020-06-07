@@ -1,0 +1,22 @@
+T = int(input())
+for _ in range(T):
+    check = input()
+    stack_list=[]
+    for i in check:
+        if i in "({":
+            stack_list.append(i)
+        elif i ==")":
+            if stack_list[-1] != "(":
+                break
+            else:
+                stack_list.pop()
+        elif i =="}":
+            if stack_list[-1] != "{":
+                break
+            else:
+                stack_list.pop()
+
+    if len(stack_list)==0:
+        print(1)
+    else:
+        print(0)
