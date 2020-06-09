@@ -12,15 +12,19 @@ SELECT 문: 데이터 조회
 	- offset : 어디서부터 가져올 지 결과행 제한 위치.
 */
 
--- SELECT * FROM SAMPLE21; #전체 컬럼
--- SELECT NAME FROM SAMPLE21; #특정 컬럼
--- SELECT NAME, BIRTHDAY FROM SAMPLE21;
+SELECT * FROM SAMPLE21; #전체 컬럼
+SELECT NAME FROM SAMPLE21; #특정 컬럼
+SELECT NAME, BIRTHDAY FROM SAMPLE21;
 
--- SELECT * FROM sample21 WHERE NO=3;
--- SELECT birthday, name FROM sample21 WHERE NAME='홍길동';
--- SELECT * FROM sample21 WHERE NO>1;
--- SELECT * FROM sample21 WHERE NO<>1; #no가 1이 아닌 레코드
--- SELECT * FROM sample21 WHERE no != 2;
+SELECT * FROM sample34;
+SELECT sample34.quantity FROM sample.sample34; # DB 내 객체는 name space.
+
+
+SELECT * FROM sample21 WHERE NO=3;
+SELECT birthday, name FROM sample21 WHERE NAME='홍길동';
+SELECT * FROM sample21 WHERE NO>1;
+SELECT * FROM sample21 WHERE NO<>1; #no가 1이 아닌 레코드
+SELECT * FROM sample21 WHERE no != 2;
 
 -- SELECT * 
 -- FROM sample21
