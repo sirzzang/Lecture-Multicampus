@@ -56,15 +56,15 @@
 
 
 # 5. 주문자, 주문정보, 직원정보, 배송자정보 통합 조회: 고객 컬럼 전체, 주문 정보 컬럼 전체(order, orderdetail), 배송자 정보 컬럼 전체.
-SELECT *
-FROM customers AS C
-	JOIN orders AS O ON O.customerid = C.customerid
-	JOIN orderdetails AS OD ON OD.orderid = O.OrderID
-	JOIN employees AS E ON E.EmployeeID = O.EmployeeId;
-
-SELECT *
-FROM customers c, orders o, orderdetails od, employees e
-WHERE c.CustomerID = o.CustomerID AND o.OrderID = od.OrderID AND o.EmployeeID = e.EmployeeID;
+-- SELECT *
+-- FROM customers AS C
+-- 	JOIN orders AS O ON O.customerid = C.customerid
+-- 	JOIN orderdetails AS OD ON OD.orderid = O.OrderID
+-- 	JOIN employees AS E ON E.EmployeeID = O.EmployeeId;
+-- 
+-- SELECT *
+-- FROM customers c, orders o, orderdetails od, employees e
+-- WHERE c.CustomerID = o.CustomerID AND o.OrderID = od.OrderID AND o.EmployeeID = e.EmployeeID;
 
 # 6. 판매량 상위 3위까지 공급자 목록: 공급자 명, 판매량, 판매금액
 -- 판매량이 어디에 있는가? quantity??
@@ -76,15 +76,27 @@ WHERE c.CustomerID = o.CustomerID AND o.OrderID = od.OrderID AND o.EmployeeID = 
 -- GROUP BY contactname
 -- ORDER BY SUM(OD.quantity) DESC
 -- LIMIT 3;
+-- 
+-- SELECT contactname AS 공급자명, SUM(od.quantity) AS 판매량, SUM(od.quantity*od.unitprice) AS 판매금액
+-- FROM orders o, orderdetails od, products p, suppliers s
+-- WHERE o.OrderID = od.OrderID AND od.ProductID = p.ProductID AND p.SupplierID = s.SupplierID
+-- GROUP BY contactname
+-- ORDER BY SUM(od.quantity) DESC
+-- LIMIT 3;
 
 # 7. 상품 분류별, 고객 지역별 판매량 순위: 순위, 카테고리명, 고객지역명, 판매량 -- 판매량 합인가????????
 # 순위...
--- SELECT categoryname, shipcity, sum(quantity) -- SUM(quantity) AS 판매량 순위
--- FROM products AS P
--- 	JOIN categories AS C ON P.CategoryID = C.CategoryID
--- 	JOIN orderdetails AS OD ON OD.ProductID = P.ProductID
--- 	JOIN orders AS O ON OD.OrderID = O.OrderID
--- GROUP BY categoryname, shipcity;
+SELECT categoryname, shipcity, sum(quantity) -- SUM(quantity) AS 판매량 순위
+FROM products AS P
+	JOIN categories AS C ON P.CategoryID = C.CategoryID
+	JOIN orderdetails AS OD ON OD.ProductID = P.ProductID
+	JOIN orders AS O ON OD.OrderID = O.OrderID
+GROUP BY categoryname, shipcity;
+
+SELECT categoryname, shipcity, SUM(quantity)
+FROM products p, categories c, orders o, orderdetails od
+WHERE p.CategoryID = c.CategoryID AND od.ProductID = p.ProductID AND o.OrderID = od.OrderID
+GROUP BY categoryname, shipcity;
 
 # 8. 고객 국가가 USA이고, 상품별 판매량(quantity 수량 합계) 순위: 국가명, 상품명, 판매량, 판매금액
 # 순위....
