@@ -13,8 +13,13 @@ from sklearn.tree import DecisionTreeClassifier
 import matplotlib.pyplot as plt
 
 # load data
-income = pd.read_csv("C:/Users/sir95/Desktop/LECTURE/인공지능-자연어처리(NLP)-기반-기업-데이터-분석/조성현 강사님/ML 실습/data/income.csv",
+income = pd.read_csv("C:/Users/sir95/Desktop/LECTURE/인공지능-자연어처리(NLP)-기반-기업-데이터-분석/조성현 강사님/ML 실습/dataset/income.csv",
                      index_col=False)
+
+# check categorical variable
+pd.Categorical(income['workclass']) # 범주로 변경
+pd.Categorical(income['workclass']).codes
+ 
 income['education_num']
 
 # 범주형 변수를 숫자로 바꾼다.
