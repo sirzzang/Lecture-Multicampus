@@ -30,7 +30,7 @@ print(f"Model Coefficients: {model.coef_}")
 print(f"Model Bias: {model.intercept_}")
 
 # predict data manually
-sample_data = X_test[10] # reshape 필요 없음
+sample_data = X_test[10] # reshape 필요 없음.
 sample_data_pred_manual = np.dot(model.coef_, sample_data) + model.intercept_
 sample_data_pred_res = np.exp(sample_data_pred_manual)
 sample_data_pred_res
