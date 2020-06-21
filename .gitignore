@@ -178,6 +178,8 @@ vignettes/*.pdf
 
 # End of https://www.gitignore.io/api/venv,python,jupyternotebooks,r
 
-# ignore dataset folder
+# ignore folder
 dataset/
+lecturefile/
 *.csv
+
