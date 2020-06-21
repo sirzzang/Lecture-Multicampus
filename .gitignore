@@ -1,3 +1,13 @@
+###### ignore 폴더 및 파일
+dataset/
+lecturefile/
+lecture-markdown/
+*.csv
+
+
+
+
+
 # Created by https://www.gitignore.io/api/venv,python,jupyternotebooks
 # Edit at https://www.gitignore.io/?templates=venv,python,jupyternotebooks
 
@@ -177,14 +187,3 @@ vignettes/*.pdf
 /*_files/
 
 # End of https://www.gitignore.io/api/venv,python,jupyternotebooks,r
-
-
-
-
-
-###### ignore 폴더 및 파일
-dataset/
-lecturefile/
-lecture-markdown/
-*.csv
-

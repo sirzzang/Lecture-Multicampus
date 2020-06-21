@@ -1,0 +1,22 @@
+<h1> Blog Search </h1> <!--CSS 없이 단순하게 만든다.-->
+
+<br>
+
+<form action = "." method ="post"> {% csrf_token %}
+    {{form.as_table}}
+    <input type="submit" value="검색"> <!-- value : 보여지는 텍스트 -->
+</form>
+
+<br /><br />
+{% if object_list %} <!--object list가 있으면 보여준다-->
+    {% for post in object_list %}
+    <h3><a href='{{ post.get_absolute_url }}'>{{ post.title }}</a></h3>
+    {{ post.modify_dt|date:"N d, Y" }}
+    <p>{{ post.description }}</p>
+    {% endfor %}
+
+{% elif search_term %}
+<b><i>Search Word({{ search_term }}) Not Found.</i></b>
+
+{% endif %}
+

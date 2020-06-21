@@ -1,0 +1,10 @@
+<!-- 상세보기 html 페이지-->
+
+<h2> {{ object.title }} </h2>
+
+<p> {{ object.modify_dt | date:"j F Y" }}</p> <!-- 공백 넣으면 안 됨!-->
+<br>
+
+<div>
+    {{ object.content | linebreaks }} <!--자동 줄바꿈-->
+</div>

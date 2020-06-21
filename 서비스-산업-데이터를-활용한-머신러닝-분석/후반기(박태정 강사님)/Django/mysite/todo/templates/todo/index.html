@@ -1,0 +1,82 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Boot strap -->
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <style>
+        .content{
+            height: 75%;
+        }
+        .messageDiv{
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+        .toDoDiv{
+
+        }
+        .custom-btn{
+            font-size: 10px;
+        }
+        .panel-footer{
+            height:10%;
+            color:gray;
+        }
+    </style>
+
+    <title>To-Do</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="page-header">
+                <h1>To-do List <small>with Django</small></h1>
+            </div>
+        </div>
+        <div class="content">
+            <div class="messageDiv">
+                <form action="./createTodo" method="POST">{% csrf_token %} 
+                    <!--action에 createTodo 추가-->
+                    <div class="input-group">
+                        <input id="todoContent" name="todoContent" type="text" class="form-control" placeholder="메모할 내용을 적어주세요">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">메모하기!</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="toDoDiv">
+                <ul class="list-group">
+                    {% for todo in todos %} <!-- python으로 html for문 작성-->
+                    {% if todo.isDone == False %} <!-- isDone이 False인 애들만 보여주기-->
+                    <form action="./doneTodo" method="GET"> <!-- doneTodo 연결-->
+                        <div class="input-group" name='todo1'>
+                            <li class="list-group-item">{{todo.content}}</li>
+                            <!-- 모델에 정의했던 content를 적기 위해-->
+                            <input type="hidden" id="todoNum" name="todoNum" value="{{todo.id}}"></input> 
+                            <!-- 출력문-->
+                            <span class="input-group-addon">
+                                <button type="submit" class="custom-btn btn btn-danger">완료</button>
+                            </span>
+                        </div>
+                    </form>
+                    {% else %} <!-- else인 경우 확인하지 않는다. -->
+                    {% endif %}
+                    {% endfor %}
+
+                </ul>
+            </div>
+        </div>
+        <div class="panel-footer">
+              Django 프레임워크기반 웹 프로젝트 Todo 웹앱 
+        </div>
+    </div>
+</body>
+</html>
