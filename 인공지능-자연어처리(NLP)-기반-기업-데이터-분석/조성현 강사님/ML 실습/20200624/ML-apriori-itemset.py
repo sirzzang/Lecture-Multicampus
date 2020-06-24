@@ -16,10 +16,12 @@ dataset = [['Milk', 'Onion', 'Nutmeg', 'Kidney Beans', 'Eggs', 'Yogurt'], \
            ['Milk', 'Apple', 'Kidney Beans', 'Eggs'], \
            ['Milk', 'Unicorn', 'Corn', 'Kidney Beans', 'Yogurt'], \
            ['Corn', 'Onion', 'Onion', 'Kidney Beans', 'Ice cream', 'Eggs']]
+print(dataset)
 
 # item sparse matrix
 te = TransactionEncoder()
 te_ary = te.fit(dataset).transform(dataset)
+print(te_ary)
 df = pd.DataFrame(te_ary, columns=te.columns_)
 
 # apriori model
