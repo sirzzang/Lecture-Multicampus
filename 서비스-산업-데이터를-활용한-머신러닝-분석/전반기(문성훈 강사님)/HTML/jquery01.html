@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>jquery01</title>
+        <!-- CDN이라는 방식을 이용해서 library를 로딩, 내 코드 위에 링크 복붙!-->
+        <script
+                src="https://code.jquery.com/jquery-2.2.4.min.js"
+                integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+                crossorigin="anonymous"></script>
+        <script src="./js/jquery01.js"></script>
+        <style>
+                .word {
+                    font-size: 20pt;
+                }
+        </style>
+    </head>
+    <body>
+        <h1>여기는 h1입니다.</h1>
+        <div>소리없는 아우성!!</div>
+        <div id="firstDiv">
+            <ul>
+                    <li class="word">호랑이</li>
+                    <li id="dog">강아지</li>
+                    <li>고양이</li>
+            </ul>
+        </div>
+        <input type="text" size="30">
+        <div>
+            <ol>
+                <li class="word">수원</li>
+                <li>인천</li>
+            </ol>
+        </div>
+        <input type ="button" value="클릭클릭"
+                onclick="myFunc()">
+    </body>
+</html>
