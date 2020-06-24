@@ -1,0 +1,23 @@
+def solution(bridge_length, weight, truck_weights):
+    s = [0 for i in range(bridge_length)]
+    ans = 0
+    while s:
+        ans += 1
+        s.pop(0)
+        if truck_weights:
+            if (sum(s)+truck_weights[0]) = weight:
+                s.append(truck_weights.pop(0))
+            else:
+                s.append(0)
+    return ans
+
+
+def process_outlier(tmp_df, tmp):
+    q1, q3 = np.percentile(tmp, [25, 75])
+    iqr = q3 - q1
+    upper = q3 + 1.5 * iqr
+    lower = q1 - 1.5 * iqr
+    mask_upper = tmp > upper
+    mask_lower = tmp < lower
+    tmp_df = tmp_df.loc[~(mask_upper | mask_lower)]    # not 붙으면 가운데가 &로 변하니까 주의
+    return tmp_df

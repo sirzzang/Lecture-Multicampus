@@ -9,6 +9,8 @@ Created on Wed Jun 24 16:31:03 2020
 import numpy as np
 import tensorflow as tf
 
+tf 
+
 # 4x4 matrix
 a = np.array([[1,2,3,4],\
               [4,5,6,7],\
