@@ -3,6 +3,7 @@ dataset/
 lecturefile/
 lecture-markdown/
 *.csv
+.idea/
 
 
 
