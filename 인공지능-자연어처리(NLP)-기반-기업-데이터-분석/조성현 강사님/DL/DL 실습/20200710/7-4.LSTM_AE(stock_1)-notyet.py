@@ -28,8 +28,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from MyUtil import TaFeatureSet
-import pickle
 
+import pickle
 nInput = 3
 nStep = 20
 nHidden = 3         # 8개 feature를 3개로 줄인다.
@@ -94,7 +94,7 @@ x, y = createTrainData(data, nStep)
 
 # LSTM AutoEncoder.
 # -----------------
-xInput = Input(batch_shape=(None, x.shape[1], x.shape[2]))
+xInput = Input(batch_shape=(None, x.shape[1], x.shape[2])) # 여기까지 돌리고 x.shape 찍어봅시다.
 
 # encoder
 eLstm = Bidirectional(LSTM(nHidden, return_sequences=True), merge_mode = 'sum')(xInput)
