@@ -80,9 +80,9 @@ def Generator(data):
     g_Out = tf.matmul(g_Hidden, g_Wo) + g_Bo
     return g_Out # activation 없음.
 
-# 가짜 데이터 생성: (m, n) 크기의 랜덤한 정규분포 = 원래 real과 같다는 보장 없음.
+# 가짜 데이터 생성: (m, n) 크기의 랜덤한 분포에서 생성.
 def makeZ(m, n=g_input):
-    z = np.random.normal(-1.0, 1.0, size=[m, n]).astype(np.float32)
+    z = np.random.uniform(-1.0, 1.0, size=[m, n]).astype(np.float32)
     return z
 
 # Discriminator Loss
