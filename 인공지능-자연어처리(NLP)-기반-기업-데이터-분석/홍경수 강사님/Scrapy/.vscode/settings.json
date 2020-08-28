@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "C:\\Users\\sir95\\anaconda3\\envs\\scrapy_env\\python.exe",
+    "terminal.integrated.automationShell.windows": "",
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe", 
+    "terminal.integrated.shellArgs.windows": ["/K" , "C:\\Users\\sir95\\anaconda3\\Scripts\\activate.bat C:\\Users\\sir95\\anaconda3 & conda activate scrapy_env"]
+}
