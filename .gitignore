@@ -4,6 +4,7 @@ lecturefile/
 lecture-markdown/
 *.csv
 .idea/
+.vscode/
 
 
 
